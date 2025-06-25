@@ -1,0 +1,226 @@
+:root {
+  --color-principal: #8b2e3c;     
+  --color-secundario: #b04153;      
+  --color-fondo: #f7f1ed;           
+  --color-texto: #2e2e2e;           
+  --color-hover: #b04153;           
+  --fuente-base: 'Poppins', sans-serif;
+  --sombra-suave: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2 {
+  font-weight: 700;
+  color: var(--color-secundario);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.hero {
+  position: relative;
+  background-color: var(--color-principal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+}
+
+.contenido-hero {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 4px solid white;
+  box-shadow: var(--sombra-suave);
+}
+.logos-superpuestos {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+    right: 25px;
+}
+
+.logo-izquierdo {
+  position: relative;
+  z-index: 2;
+  right: -50;
+
+}
+
+.logo-derecho {
+  position: relative;
+  left: -25px; 
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .logos-dobles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+  }
+    .logo {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+.eslogan {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff; 
+}
+
+.boton {
+  background-color: #fff;
+  color: var(--color-principal);
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.boton:hover {
+  background-color: var(--color-hover);
+  color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: var(--sombra-suave);
+}
+
+.zona-compacta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  gap: 3rem;
+  background-color: var(--color-fondo);
+}
+
+.zona-compacta .descripcion,
+.zona-compacta .opciones,
+.zona-compacta .banner-promocional {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+}
+
+.zona-compacta .descripcion p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.servicios-unidos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.contacto {
+  margin: 4rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.info-contacto {
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1rem;
+  background-color: var(--color-fondo);
+  border-radius: 12px;
+  box-shadow: var(--sombra-suave);
+}
+
+.info-contacto a {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+
+.info-contacto a:hover {
+  color: var(--color-hover);
+  text-decoration: underline;
+}
+
+footer {
+  background-color: var(--color-principal);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+}
+
+.redes a {
+  color: white;
+  margin: 0 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.redes a:hover {
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
